@@ -76,16 +76,16 @@ void Insert(struct Node* p,int value, int index)
     
     if(index == 0)
     {
-        // Sadece 1 tane node varsa
+        
         if(Head == NULL)
         {
             Head = t;
             Head->next = Head;
         }
-        // Birden fazla node varsa
+        
         else
         {
-            // En sona kadar ilerleyelim
+            
             while(p->next!=Head) p=p->next;
             p->next = t;
             t->next = Head;
@@ -103,13 +103,13 @@ void Insert(struct Node* p,int value, int index)
 
 void Delete(struct Node* p, int index)
 {
-    // Uygun index girilmeszse hi�bir �ey yapmadan ��k
+    
     if(index <= 0 || index > Length(p)) return;
-    // Ilk indexteki silinecekse sona kadar git next'ini ikinci indexe ba�la
+    
     if(index == 1)
     {
         while(p->next != Head)  p = p->next;
-        // Tek node'dan olu�uyorsa onu da sil NULL'a �ek
+        
         if(Head == p)
         {
             free(p);
